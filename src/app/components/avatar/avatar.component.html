@@ -1,0 +1,45 @@
+<div class="avatar-container">
+  <div class="avatar-label">Explorador Anthony</div>
+  <div class="avatar-wrapper">
+    <div class="avatar-roblox">
+      <!-- Corpo base -->
+      <div class="body-part body-base"></div>
+      
+      <!-- Cabeça -->
+      <div class="body-part head">
+        <!-- Olhos -->
+        <div class="eye eye-left"></div>
+        <div class="eye eye-right"></div>
+        <!-- Sorriso (aparece quando completar todas as missões - nível 8+) -->
+        <div class="smile" *ngIf="player.level >= 8"></div>
+      </div>
+      
+      <!-- Itens conquistados -->
+      <!-- Missão 1: Semáforo -->
+      <div class="item traffic-light" *ngIf="hasItem('traffic_light')"></div>
+      <!-- Missão 2: Placa de Pare -->
+      <div class="item sign-stop" *ngIf="hasItem('sign_stop')"></div>
+      <!-- Missão 3: Capacete de Segurança -->
+      <div class="item helmet-safety" *ngIf="hasItem('helmet_safety')"></div>
+      <!-- Missão 4: Folha Verde -->
+      <div class="item leaf-green" *ngIf="hasItem('leaf_green')"></div>
+      <!-- Missão 5: Gota d'água -->
+      <div class="item water-drop" *ngIf="hasItem('water_drop')"></div>
+      <!-- Missão 6: Trigo -->
+      <div class="item wheat" *ngIf="hasItem('wheat')"></div>
+      <!-- Missão 7: Fábrica -->
+      <div class="item factory" *ngIf="hasItem('factory')"></div>
+      <!-- Missão 8: Robô -->
+      <div class="item robot" *ngIf="hasItem('robot')"></div>
+      <!-- Missão 9: Medalha do Trânsito -->
+      <div class="item medal-transit" *ngIf="hasItem('medal_transit')"></div>
+      <!-- Missão 10: Globo de Campeão -->
+      <div class="item globe-champion" *ngIf="hasItem('globe_champion')"></div>
+      
+      <!-- Efeito de brilho ao ganhar novo item -->
+      <div class="sparkle" *ngIf="player.items.length > 0">✨</div>
+    </div>
+  </div>
+  <div class="avatar-name">{{ player.name }}</div>
+  <div class="avatar-level">Nível {{ player.level }}</div>
+</div>

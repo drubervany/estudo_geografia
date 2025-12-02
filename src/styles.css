@@ -1,0 +1,19 @@
+/* Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #00bcd4 0%, #4caf50 50%, #8bc34a 100%);
+  min-height: 100vh;
+  color: #333;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+

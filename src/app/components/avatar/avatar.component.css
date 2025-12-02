@@ -1,0 +1,420 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  align-self: start;
+}
+
+.avatar-container {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #00bcd4 0%, #4caf50 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.avatar-label {
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.avatar-roblox {
+  position: relative;
+  width: 120px;
+  height: 150px;
+}
+
+.body-part {
+  position: absolute;
+  border: 3px solid #333;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeça estilo Roblox */
+.head {
+  width: 60px;
+  height: 60px;
+  background: #ffdbac;
+  border-radius: 8px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #333;
+  position: relative;
+}
+
+/* Olhos */
+.eye {
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+}
+
+.eye-left {
+  left: 18px;
+}
+
+.eye-right {
+  right: 18px;
+}
+
+/* Sorriso (aparece quando completar todas as missões) */
+.smile {
+  position: absolute;
+  width: 25px;
+  height: 12px;
+  border: 3px solid #333;
+  border-top: none;
+  border-radius: 0 0 25px 25px;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: smileAnimation 2s ease-in-out infinite;
+}
+
+@keyframes smileAnimation {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Corpo base */
+.body-base {
+  width: 50px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 5px;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #333;
+}
+
+/* ===== ITENS DAS MISSÕES ===== */
+
+/* Missão 1: Semáforo */
+.item.traffic-light {
+  width: 18px;
+  height: 35px;
+  background: #333;
+  border-radius: 3px;
+  top: 65px;
+  right: 12px;
+  border: 2px solid #222;
+  position: absolute;
+}
+
+.item.traffic-light::before {
+  content: "🚦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+}
+
+/* Missão 2: Placa de Pare */
+.item.sign-stop {
+  width: 22px;
+  height: 22px;
+  background: #f44336;
+  border-radius: 3px;
+  top: 25px;
+  left: 8px;
+  border: 2px solid #c62828;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.item.sign-stop::before {
+  content: "🛑";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 0.8em;
+}
+
+/* Missão 3: Capacete de Segurança */
+.item.helmet-safety {
+  width: 62px;
+  height: 22px;
+  background: #ffeb3b;
+  border-radius: 15px 15px 5px 5px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #fbc02d;
+  position: absolute;
+  z-index: 10;
+}
+
+.item.helmet-safety::before {
+  content: "⛑️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+}
+
+/* Missão 4: Folha Verde */
+.item.leaf-green {
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50% 0 50% 0;
+  top: 20px;
+  right: 18px;
+  border: 2px solid #2e7d32;
+  position: absolute;
+}
+
+.item.leaf-green::before {
+  content: "🍃";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+}
+
+/* Missão 5: Gota d'água */
+.item.water-drop {
+  width: 20px;
+  height: 25px;
+  background: #2196f3;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 35px;
+  right: 22px;
+  border: 2px solid #1976d2;
+  position: absolute;
+}
+
+.item.water-drop::before {
+  content: "💧";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9em;
+}
+
+/* Missão 6: Trigo */
+.item.wheat {
+  width: 25px;
+  height: 30px;
+  background: #ff9800;
+  border-radius: 3px;
+  top: 72px;
+  left: 12px;
+  border: 2px solid #f57c00;
+  position: absolute;
+}
+
+.item.wheat::before {
+  content: "🌾";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1em;
+}
+
+/* Missão 7: Fábrica */
+.item.factory {
+  width: 22px;
+  height: 22px;
+  background: #607d8b;
+  border-radius: 3px;
+  top: 45px;
+  left: 10px;
+  border: 2px solid #455a64;
+  position: absolute;
+}
+
+.item.factory::before {
+  content: "🏭";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9em;
+}
+
+/* Missão 8: Robô - Item Final */
+.item.robot {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+  border-radius: 50%;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #7b1fa2;
+  position: absolute;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.6);
+  animation: glow 2s infinite;
+  z-index: 5;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(156, 39, 176, 0.9);
+  }
+}
+
+.item.robot::before {
+  content: "🤖";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1em;
+}
+
+/* Missão 9: Medalha do Trânsito */
+.item.medal-transit {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+  border-radius: 50%;
+  top: 100px;
+  right: 15px;
+  border: 3px solid #ff9800;
+  position: absolute;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  animation: medalShine 2s infinite;
+  z-index: 5;
+}
+
+@keyframes medalShine {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+  }
+}
+
+.item.medal-transit::before {
+  content: "🏅";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+}
+
+/* Missão 10: Globo de Campeão - Item Final */
+.item.globe-champion {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #00bcd4 0%, #4caf50 50%, #8bc34a 100%);
+  border-radius: 50%;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #009688;
+  position: absolute;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.7), 0 0 40px rgba(76, 175, 80, 0.5);
+  animation: championGlow 2s infinite, rotate 8s linear infinite;
+  z-index: 20;
+}
+
+@keyframes championGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6), 0 0 30px rgba(76, 175, 80, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 188, 212, 1), 0 0 50px rgba(76, 175, 80, 0.8);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.item.globe-champion::before {
+  content: "🌍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  animation: rotate-reverse 8s linear infinite;
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* Efeito de brilho */
+.sparkle {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5em;
+  animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.avatar-name {
+  font-size: 1.3em;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Comic Sans MS', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-level {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+  font-family: 'Comic Sans MS', sans-serif;
+}
