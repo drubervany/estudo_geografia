@@ -73,7 +73,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/explorador_mundo/",
+            "baseHref": "/estudo_geografia/",
             "dir": "dist/explorador-mundo-geografia"
           }
         }
